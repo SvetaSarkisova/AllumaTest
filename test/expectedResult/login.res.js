@@ -1,0 +1,20 @@
+export default {
+    titleCONNECTIONSText: 'CONNECTIONS',
+    titleWelcomeToConnectionsText: 'Welcome to Connections',
+    title3ConnectPeopleText: 'Connect people with the benefits they need, with one simple application.',
+    title4CuriousWhatText: 'Curious what you may qualify for?',
+    linkTryOurQuickScreenText: 'Try our Quick Screener',
+    linkQuickScreener: 'http://oxcdemo.alluma.org/#/quick/intro',
+    screenerWelcomePage: 'Welcome to the Quick Screener',
+    userNameLbl: 'User name required',
+    userPasswordLbl: 'Password required',
+    forgotUserNameText: 'Forgot User Name or Password ?',
+    linkForgotUserName: 'User Name',
+    linkForgotPassword: 'Password',
+    infoContactAdmin: 'If you need a user name, contact your system administrator.',
+    infoConnectionUser: 'Interested in becoming a Connections user? Learn More',
+    loginButtonText: 'Log In',
+    errorAllFieldsEmpty: 'The Username field is required.\n' +
+        'The Password field is required.',
+    errorPasswordFieldEmpty: 'The Username field is required.',
+}
