@@ -3,11 +3,12 @@ exports.config = {
     runner: 'local',
 
     specs: [
-        './test/specs/header.spec.js',
+        //'./test/specs/header.spec.js',
         './test/specs/login.spec.js',
-        './test/specs/footer.spec.js',
-        './test/specs/forgot-username.spec.js',
-        './test/specs/forgot-password.spec.js'
+        // './test/specs/footer.spec.js',
+        './test/specs/forgotUserName.spec.js',
+        './test/specs/forgotPassword.spec.js',
+
     ],
     // Patterns to exclude.
     exclude: [

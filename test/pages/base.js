@@ -1,5 +1,5 @@
 import selects from '../selectors/header.selectors';
-import expectedResultHead from '../expectedResult/header.res';
+import selectors from '../selectors/login.selectors';
 import {assert} from 'chai';
 
 export default class Base {
@@ -7,6 +7,16 @@ export default class Base {
     openPage() {
         browser.url('');
         $(selects.header).waitForDisplayed();
+    }
+
+    openForgotUserName(){
+        browser.url('');
+        $(selectors.linkForgotUserName).click();
+    }
+
+    openForgotPassword(){
+        browser.url('');
+        $(selectors.linkForgotPassword).click();
     }
 
 }
