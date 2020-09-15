@@ -202,7 +202,7 @@ class LoginForm extends BasePage {
     }
 
     whenUserNameAndPasswordEmpty() {
-        this.openPage()
+        this.openPage();
         $(selects.loginButton).click();
         const errorMsg = $(selects.errorMassageAllEmpty).isDisplayed();
         assert.isTrue(errorMsg);
