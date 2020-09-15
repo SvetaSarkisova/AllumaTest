@@ -1,24 +1,23 @@
 import {assert} from 'chai';
-import expectedForgotPassword from '../expectedResult/forgotPassword.res'
-import Base from "./base";
+import BasePage from "./base.page";
 import selectorsForgotPassword from "../selectors/forgotPassword.selectors";
 import selectorsLoginPage from "../selectors/login.selectors";
 import selectorsUserName from "../selectors/forgotUserName.selectors";
-import selects from "../selectors/login.selectors";
+import expectedForgotPassword from '../expectedResult/forgotPassword.res';
 import data from "../data.json";
-import expected from "../expectedResult/login.res";
 
-class ForgotPasswordPage extends Base {
+
+class ForgotPasswordPage extends BasePage {
 
     openForgotPasswordPage() {
         this.openForgotPassword();
         const forgotPassword = $(selectorsForgotPassword.headerTitleConnect).isDisplayed();
-        assert.isTrue(forgotPassword)
+        assert.isTrue(forgotPassword);
     }
 
     titleForgotPasswDisplayed() {
         const forgotPasswTitle = $(selectorsForgotPassword.headerTitleForgotPassword).isDisplayed();
-        assert.isTrue(forgotPasswTitle)
+        assert.isTrue(forgotPasswTitle);
     }
 
     supportiveTextDisplayed() {
@@ -28,32 +27,32 @@ class ForgotPasswordPage extends Base {
 
     forgotMyUserNameLinkDisplayed() {
         const forgotUserNameLink = $(selectorsForgotPassword.forgotMyUserNameLink).isDisplayed();
-        assert.isTrue(forgotUserNameLink)
+        assert.isTrue(forgotUserNameLink);
     }
 
     userNameFieldDisplayed() {
-        const userNameField = $(selectorsForgotPassword.userNameField).isDisplayed()
-        assert.isTrue(userNameField)
+        const userNameField = $(selectorsForgotPassword.userNameField).isDisplayed();
+        assert.isTrue(userNameField);
     }
 
     userNameFieldIconDisplayed() {
-        const icon = $(selectorsForgotPassword.userNameIcon).isDisplayed()
-        assert.isTrue(icon)
+        const icon = $(selectorsForgotPassword.userNameIcon).isDisplayed();
+        assert.isTrue(icon);
     }
 
     userNameFieldLabelDisplayed() {
-        const label = $(selectorsForgotPassword.userNameLabel).isDisplayed()
-        assert.isTrue(label)
+        const label = $(selectorsForgotPassword.userNameLabel).isDisplayed();
+        assert.isTrue(label);
     }
 
     cancelButtonDisplayed() {
-        const cancelButton = $(selectorsForgotPassword.cancelButton).isDisplayed()
-        assert.isTrue(cancelButton)
+        const cancelButton = $(selectorsForgotPassword.cancelButton).isDisplayed();
+        assert.isTrue(cancelButton);
     }
 
     continueButtonDisplayed() {
-        const continueButton = $(selectorsForgotPassword.continueButton).isDisplayed()
-        assert.isTrue(continueButton)
+        const continueButton = $(selectorsForgotPassword.continueButton).isDisplayed();
+        assert.isTrue(continueButton);
     }
 
     headerTitleConnectionText() {
@@ -67,8 +66,8 @@ class ForgotPasswordPage extends Base {
     }
 
     supportiveTextTxt() {
-        const supportText = $(selectorsForgotPassword.supportiveText).getText()
-        assert.equal(supportText, expectedForgotPassword.supportiveTextTxt)
+        const supportText = $(selectorsForgotPassword.supportiveText).getText();
+        assert.equal(supportText, expectedForgotPassword.supportiveTextTxt);
     }
 
     forgotMyUserNameLinkText() {
@@ -92,52 +91,52 @@ class ForgotPasswordPage extends Base {
     }
 
     forgotUserNameLinkClickable(){
-        const link = $(selectorsForgotPassword.forgotMyUserNameLink).isClickable()
-        assert.isTrue(link)
+        const link = $(selectorsForgotPassword.forgotMyUserNameLink).isClickable();
+        assert.isTrue(link);
     }
 
     cancelBtnClickable(){
-        const cancelBtn = $(selectorsForgotPassword.cancelButton).isClickable()
-        assert.isTrue(cancelBtn)
+        const cancelBtn = $(selectorsForgotPassword.cancelButton).isClickable();
+        assert.isTrue(cancelBtn);
     }
 
     continueBtnTClickable(){
-        const continueBtnT = $(selectorsForgotPassword.continueButton).isClickable()
-        assert.isTrue(continueBtnT)
+        const continueBtnT = $(selectorsForgotPassword.continueButton).isClickable();
+        assert.isTrue(continueBtnT);
     }
 
     cancelBtnRedirect(){
-        $(selectorsForgotPassword.cancelButton).click()
+        $(selectorsForgotPassword.cancelButton).click();
         const redirect = $(selectorsLoginPage.headerTitleWelcome).isDisplayed();
-        assert.isTrue(redirect)
+        assert.isTrue(redirect);
     }
 
     forgotUserNameRedirect(){
         this.openForgotPassword();
-        $(selectorsForgotPassword.forgotMyUserNameLink).click()
+        $(selectorsForgotPassword.forgotMyUserNameLink).click();
         const redirect = $(selectorsUserName.headerTitleRecoveryUserName).isDisplayed();
-        assert.isTrue(redirect)
+        assert.isTrue(redirect);
     }
 
     userNameEmptyErrorMsg(){
-        this.openForgotPassword()
-        browser.pause(1000)
-        $$(selectorsForgotPassword.continueButton)[1].click()
-        const errorMsg = $(selectorsForgotPassword.errorMassage).isDisplayed()
+        this.openForgotPassword();
+        browser.pause(1000);
+        $$(selectorsForgotPassword.continueButton)[1].click();
+        const errorMsg = $(selectorsForgotPassword.errorMassage).isDisplayed();
         assert.isTrue(errorMsg);
 
     }
 
     userNameEmptyErrorMsgText(){
-        const userNameEmpty = $(selectorsForgotPassword.errorMassage).getText()
-        assert.equal(userNameEmpty, expectedForgotPassword.errorMsgText)
+        const userNameEmpty = $(selectorsForgotPassword.errorMassage).getText();
+        assert.equal(userNameEmpty, expectedForgotPassword.errorMsgText);
     }
 
     continueButtonRedirects(){
-        $(selectorsForgotPassword.userNameField).setValue(data.userName)
-        $$(selectorsForgotPassword.continueButton)[1].click()
-        const emailSent = $(selectorsForgotPassword.emailSentHeader).isDisplayed()
-        assert.isTrue(emailSent)
+        $(selectorsForgotPassword.userNameField).setValue(data.userName);
+        $$(selectorsForgotPassword.continueButton)[1].click();
+        const emailSent = $(selectorsForgotPassword.emailSentHeader).isDisplayed();
+        assert.isTrue(emailSent);
     }
 
 }

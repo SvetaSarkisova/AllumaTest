@@ -4,10 +4,11 @@ export default {
     headerTitleWelcome: '.gg-login-form-title2',
     definitionText: '.gg-login-form-title3',
     qualifyQuestion: '.gg-login-form-title1', //[1] element in arr
-    screenerLink: 'div > label > a',
+    //screenerLink: 'div > label > a',
+    screenerLink: '.gg-links-text',
     userNameLabel: '[for="Username"]',
     userNameField: '#Username',
-    userNameIcon: '.gg-form-input-icon', //[0] element in arr - $$(.gg-form-input-icon)
+    userNameIcon: '.gg-form-input-icon', //[0] element in arr
     passwordLabel: '[for="Username"]', //[1] element in arr
     passwordField: '#Password',
     passwordIcon: '.gg-form-input-icon', //[1] element in arr

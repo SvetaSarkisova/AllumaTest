@@ -1,9 +1,9 @@
 import { assert } from 'chai';
-import Base from './base';
+import BasePage from './base.page';
 import selects from '../selectors/footer.selectors';
 import expect from '../expectedResult/footer.res';
 
-class Footer extends Base {
+class FooterPage extends BasePage {
 
 
     footerIsDisplayed(){
@@ -53,7 +53,7 @@ class Footer extends Base {
     }
 
     facebookIconDisplayed() {
-        const facebook = $(selects.iconFacebook).isDisplayed()
+        const facebook = $(selects.iconFacebook).isDisplayed();
         assert.isTrue(facebook);
     }
 
@@ -138,30 +138,30 @@ class Footer extends Base {
     }
 
     copyrightext() {
-        const copy = $$(selects.copyright2019)[2].getText()
+        const copy = $$(selects.copyright2019)[2].getText();
         assert.equal(copy, expect.copyright2019Text);
     }
 
     linkAllumaText() {
-        const linkAlluma = $(selects.linkAlluma).getText()
+        const linkAlluma = $(selects.linkAlluma).getText();
         assert.equal(linkAlluma, expect.linkAllumaText);
     }
 
 
     privacyPolicyLinkText() {
-        const privacyLink = $$(selects.linkPrivacyPolicy)[2].getText()
+        const privacyLink = $$(selects.linkPrivacyPolicy)[2].getText();
         assert.equal(privacyLink, expect.linkPolicyText);
     }
 
 
     nonDiscrimLinkTxt() {
-        const nonDiscrimTxt = $$(selects.linkNonDiscriminationPolicy)[3].getText()
+        const nonDiscrimTxt = $$(selects.linkNonDiscriminationPolicy)[3].getText();
         assert.equal(nonDiscrimTxt, expect.linkNonDiscriminationPolicyText);
     }
 
 
     termsLinkTxt() {
-        const termsTxt = $$(selects.linkTerms)[4].getText()
+        const termsTxt = $$(selects.linkTerms)[4].getText();
         assert.equal(termsTxt, expect.linkTermsText);
     }
 
@@ -237,4 +237,4 @@ class Footer extends Base {
 
 }
 
-export default new Footer();
+export default new FooterPage();

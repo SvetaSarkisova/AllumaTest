@@ -9,5 +9,5 @@ export default {
     backToLoginBtn:'[value="BackToLogin"]',
     recoverUserNameBtn:'[value="ResetPassword"]',
     errorMassage: '.gg-error',
-    successEmailSentText: '.gg-login-form-title1'
+    successEmailSentSign: '.gg-login-form-title1'
 }

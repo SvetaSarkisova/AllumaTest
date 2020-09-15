@@ -1,14 +1,13 @@
-import {assert} from 'chai';// use assert from chai to verify expected result with actual result
-import headerTitle from '../pages/header' // import class and methods from base.page
+import headerTitle from '../pages/header.page';
 
-describe('1.1 Elements are present', function () { //define sub-suite title by passing a string
+describe('1.1 Elements are present', function () {
 
-    it('TC-1.1.1 Page Title is displayed', function () { //define test title by passing a string
-        headerTitle.openPage(); //use class HomePage method openPage to open baseUrl
+    it('TC-1.1.1 Page Title is displayed', function () {
+        headerTitle.openPage();
     })
 
     it('TC-1.1.2 Header Title  is displayed ', function () {
-        headerTitle.titlePageText(); //get page title, use class HomePage -> method tittle;
+        headerTitle.headerDisplayed();
     });
 
 
@@ -24,16 +23,20 @@ describe('1.1 Elements are present', function () { //define sub-suite title by p
 
 describe('1.2 Elements Values ', function () { //define sub-suite title by passing a string
 
-    it('TC-1.2.1 -  Header Title text equal to “CONNECTIONS”', function () {
+    it('TC-1.2.1 -  Page Title text equal to “Connections”', function () {
+        headerTitle.titlePageText();
+    });
+
+    it('TC-1.2.2 -  Header Title text equal to “CONNECTIONS”', function () {
         headerTitle.headerText();
     });
 
     // BUGS:
-    // it('TC-1.2.2 -  English Language switcher text is equal to "English"', function () {
+    // it('TC-1.2.3 -  English Language switcher text is equal to "English"', function () {
     //     headerTitle.englishLangText();
     // });
     //
-    // it('TC-1.2.3 -  Spanish Language switcher text is equal to "Espanol"', function () {
+    // it('TC-1.2.4 -  Spanish Language switcher text is equal to "Espanol"', function () {
     //     headerTitle.spanishLangText();
     // });
 });

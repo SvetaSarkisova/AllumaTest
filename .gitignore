@@ -2,3 +2,4 @@ node_modules
 .git
 allure-results
 .idea
+temp

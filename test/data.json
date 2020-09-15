@@ -2,5 +2,6 @@
   "password": "123456",
   "userName": "svetlana",
    "emailIncorrect": "happy",
-  "emailCorrect": "sveta@gmail.com"
+  "emailCorrect": "sveta@gmail.com",
+   "userNameAllChar": "!@#$%^&*(){}?~=+-_;:"
 }

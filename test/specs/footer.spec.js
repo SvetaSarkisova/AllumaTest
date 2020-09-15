@@ -1,6 +1,6 @@
-import footer from '../pages/footer' // import class and methods from footer.page
+import footer from '../pages/footer.page';
 
-describe('Footer', function () { //define sub-suite title by passing a string
+describe('Footer', function () {
 
     describe('Verify that all Elements are present in Footer', function () {
 
@@ -124,7 +124,7 @@ describe('Footer', function () { //define sub-suite title by passing a string
             footer.privacyPolicyLinkText();
         });
 
-        it('TC 2.2.12 Non-discimination Policy Link text is equal to "Non-discimination Policy "', function () {
+        it('TC 2.2.12 Non-discrimination Policy Link text is equal to "Non-discimination Policy "', function () {
             footer.nonDiscrimLinkTxt();
         });
 
@@ -164,15 +164,15 @@ describe('Footer', function () { //define sub-suite title by passing a string
     describe('Verify that all Elements functionality works correct', function () {
 
         it('TC 2.4.1 Email Link redirects to email', function () {
-            footer.emailRedirect()
+            footer.emailRedirect();
         });
 
         it('TC 2.4.2 Alluma Logo redirects to https://www.alluma.org/ ', function () {
-            footer.allumaLogoRedirect()
+            footer.allumaLogoRedirect();
         });
 
         it('TC 2.4.3 Alluma Link redirects to https://www.alluma.org/ ', function () {
-            footer.allumaLinkRedirect()
+            footer.allumaLinkRedirect();
         });
 
         it('TC 2.4.4 Facebook Icon redirect to https://www.facebook.com/WeAreAlluma/?ref=page_internal', function () {
@@ -180,11 +180,11 @@ describe('Footer', function () { //define sub-suite title by passing a string
         });
 
         it('TC 2.4.5 Twitter Icon redirect to https://twitter.com/WeAreAlluma ', function () {
-            footer.twitterIconRedirect()
+            footer.twitterIconRedirect();
         });
 
         it('TC 2.4.6 LinkedIn Icon redirect to https://www.linkedin.com/company/we-are-alluma/ ', function () {
-            footer.linkedInIconRedirect()
+            footer.linkedInIconRedirect();
         });
 
     });

@@ -24,7 +24,12 @@
     "wdio-chromedriver-service": "^6.0.4"
   },
   "scripts": {
-    "test": "wdio wdio.conf.js"
+    "tm": "wdio wdio.conf.js",
+    "test": "npm run clean && npm run temp && wdio wdio.conf.js && npm run report",
+    "clean": "rmdir /s /q temp && rmdir /s /q allure-report",
+    "temp": "mkdirp temp\\screenshots",
+    "report": "allure generate ./temp/allure-results --clean && allure open"
+
   },
   "repository": {
     "type": "git",

@@ -1,29 +1,27 @@
-import selects from '../selectors/login.selectors'
 import {assert} from 'chai';
-import expected from '../expectedResult/login.res'
-import Base from "./base";
-import expectUN from "../expectedResult/forgotUserName.res";
-import expectP from "../expectedResult/forgotPassword.res";
+import BasePage from "./base.page";
+import selects from '../selectors/login.selectors';
 import selectorsUN from '../selectors/forgotUserName.selectors';
 import selectorsP from '../selectors/forgotPassword.selectors';
-import data from '../data.json'
+import expected from '../expectedResult/login.res';
+import data from '../data.json';
 
-class LoginForm extends Base {
+class LoginForm extends BasePage {
 
     loginFormDisplayed() {
         this.openPage();
         const loginForm = $(selects.LoginForm).isDisplayed();
-        assert.isTrue(loginForm)
+        assert.isTrue(loginForm);
     }
 
     titleConnectionDisplayed() {
         const titleConnect = $(selects.headerTitleCONNECTIONS).isDisplayed();
-        assert.isTrue(titleConnect)
+        assert.isTrue(titleConnect);
     }
 
     titleWelcomeToConnectDisplayed() {
-        const welcome = $(selects.headerTitleWelcome).isDisplayed()
-        assert.isTrue(welcome)
+        const welcome = $(selects.headerTitleWelcome).isDisplayed();
+        assert.isTrue(welcome);
     }
 
     definitionTextDisplayed() {
@@ -160,22 +158,22 @@ class LoginForm extends Base {
 
     screenerLinkClickable() {
         const screenerLink = $(selects.screenerLink).isClickable();
-        assert.equal(screenerLink, true)
+        assert.equal(screenerLink, true);
     }
 
     forgotUserNameLinkClickable() {
         const forgotUserNameLink = $(selects.linkForgotUserName).isClickable();
-        assert.equal(forgotUserNameLink, true)
+        assert.equal(forgotUserNameLink, true);
     }
 
     forgotPasswordLinkClickable() {
         const forgotPasswordLink = $(selects.linkForgotPassword).isClickable();
-        assert.equal(forgotPasswordLink, true)
+        assert.equal(forgotPasswordLink, true);
     }
 
     loginButtonClickable() {
         const loginButton = $(selects.loginButton).isClickable();
-        assert.equal(loginButton, true)
+        assert.equal(loginButton, true);
     }
 
     //Bug:
@@ -206,75 +204,61 @@ class LoginForm extends Base {
     whenUserNameAndPasswordEmpty() {
         this.openPage()
         $(selects.loginButton).click();
-        const errorMsg = $(selects.errorMassageAllEmpty).isDisplayed()
+        const errorMsg = $(selects.errorMassageAllEmpty).isDisplayed();
         assert.isTrue(errorMsg);
     }
 
     errorAllFieldsEmptyTxt(){
         $(selects.loginButton).click();
-        const allEmpty = $(selects.errorMassageAllEmpty).getText()
-        assert.equal(allEmpty, expected.errorAllFieldsEmpty)
+        const allEmpty = $(selects.errorMassageAllEmpty).getText();
+        assert.equal(allEmpty, expected.errorAllFieldsEmpty);
     }
 
 
     whenUserNameEmpty() {
         $(selects.userNameField).clearValue();
-        $(selects.passwordField).setValue(data.password)
+        $(selects.passwordField).setValue(data.password);
         $(selects.loginButton).click();
-        const errorMsg = $(selects.errorMassageUserNameEmpty).isDisplayed()
+        const errorMsg = $(selects.errorMassageUserNameEmpty).isDisplayed();
         assert.equal(errorMsg, true);
     }
 
     errorMsgUserNameEmptyTxt(){
-        $(selects.passwordField).setValue(data.password)
+        $(selects.passwordField).setValue(data.password);
         $(selects.loginButton).click();
-        const userNameEmpty = $(selects.errorMassageUserNameEmpty).getText()
-        assert.equal(userNameEmpty, expected.errorUserNameFieldEmpty)
+        const userNameEmpty = $(selects.errorMassageUserNameEmpty).getText();
+        assert.equal(userNameEmpty, expected.errorUserNameFieldEmpty);
     }
 
     whenPasswordEmpty() {
-         $(selects.userNameField).setValue(data.userName)
+         $(selects.userNameField).setValue(data.userName);
          $(selects.loginButton).click();
-        const errorMsg = $(selects.errorMassagePasswordFEmpty).isDisplayed()
+        const errorMsg = $(selects.errorMassagePasswordFEmpty).isDisplayed();
         assert.equal(errorMsg, true);
     }
 
     errorMsgPasswordEmptyTxt(){
-        $(selects.userNameField).setValue(data.userName)
+        $(selects.userNameField).setValue(data.userName);
         $(selects.loginButton).click();
-        const passwordEmpty = $(selects.errorMassagePasswordFEmpty).getText()
-        assert.equal(passwordEmpty, expected.errorPasswordFieldEmpty)
+        const passwordEmpty = $(selects.errorMassagePasswordFEmpty).getText();
+        assert.equal(passwordEmpty, expected.errorPasswordFieldEmpty);
     }
 
     whenUserNameAndPasswordIncorrect() {
-        $(selects.userNameField).setValue(data.userName)
-        $(selects.passwordField).setValue(data.password)
+        $(selects.userNameField).setValue(data.userName);
+        $(selects.passwordField).setValue(data.password);
         $(selects.loginButton).click();
-        const errorMsg = $(selects.errorMessageAllIncorrect).isDisplayed()
+        const errorMsg = $(selects.errorMessageAllIncorrect).isDisplayed();
         assert.equal(errorMsg, true);
     }
 
     errorAllFieldsIncorrectTxt(){
-        $(selects.userNameField).setValue(data.userName)
-        $(selects.passwordField).setValue(data.password)
+        $(selects.userNameField).setValue(data.userName);
+        $(selects.passwordField).setValue(data.password);
         $(selects.loginButton).click();
-        const allncorrectI = $(selects.errorMessageAllIncorrect).getText()
-        assert.equal(allncorrectI, expected.errorAllFieldIncorrect)
+        const allIncorrect = $(selects.errorMessageAllIncorrect).getText();
+        assert.equal(allIncorrect, expected.errorAllFieldIncorrect);
     }
-
-
-    /**
-     *
-     * link "Try our Screener" leads to the wrong page. I was use several methods (getUrl(), getAttribute()..) and
-     * they all shows this link  `https://cx-sb01-auth01.azurewebsites.net/#/quick/intro`
-     * but have to show 'http://oxcdemo.alluma.org/#/quick/intro'
-
-     Example:
-     linkTryOurQuickScreenerUrl() {
-        const link = $('div > label > a').getAttribute('href');
-        assert.equal(link, expectedRes.linkQuickScreener);
-    }*/
-
 
 }
 

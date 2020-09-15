@@ -1,9 +1,10 @@
-import selects from '../selectors/header.selectors';
 import {assert} from 'chai';
+import BasePage from './base.page';
+import selects from '../selectors/header.selectors';
 import expectedRes from '../expectedResult/header.res';
-import Base from './base';
 
-class HeaderTitle extends Base {
+
+class HeaderTitle extends BasePage {
 
     titlePageText() {
         const text = browser.getTitle();

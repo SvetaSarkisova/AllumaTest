@@ -6,6 +6,6 @@ export default {
     backToLoginBtnText:'Back to Login',
     recoverUsernameBtnText:'Recover Username',
     errorMassageEmail: 'The Email field is required.',
-    successEmailSent: 'An e-mail with your username has been sent to the entered e-mail address if it corresponds to an active account.'
+    successEmailSentText: 'An e-mail with your username has been sent to the entered e-mail address if it corresponds to an active account.'
 
 }
