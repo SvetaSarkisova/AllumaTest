@@ -100,11 +100,11 @@ describe('Forgot Password', function () {
             forgotPasswordForm.forgotUserNameRedirect();
         });
 
-        it('TC 5.4.3 When User name Field is Empty Error Message "The Username field is required." shows up', function () {
+        it('TC 5.4.3 Submitting an empty User name Field throws an error "The Username field is required." ', function () {
             forgotPasswordForm.userNameEmptyErrorMsg();
         });
 
-        it('TC 5.4.4 When User name Field filled out correct, Continue Button redirects to Email Sent Page ', function () {
+        it('TC 5.4.4 Submitting correct User name Field , Continue Button redirects to Email Sent Page ', function () {
             forgotPasswordForm.continueButtonRedirects();
         });
 
