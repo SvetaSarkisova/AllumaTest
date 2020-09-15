@@ -176,19 +176,19 @@ describe('Login Form ', function () {
             login.forgotPasswordLinkRedirect();
         });
 
-        it('TC 3.4.4 When User name Field and Password Field are empty Error Message "The Username field is required.The Password field is required." shows up', function () {
+        it('TC 3.4.4 Submitting an empty User name Field and Password Field  throws an error "The Username field is required.The Password field is required."', function () {
             login.whenUserNameAndPasswordEmpty();
         });
 
-        it('TC 3.4.5 When User Name Field is empty Error Message "The Username field is required." shows up', function () {
+        it('TC 3.4.5 Submitting an empty User Name Field throws an error  "The Username field is required."', function () {
             login.whenUserNameEmpty();
         });
 
-        it('TC 3.4.6 When Password Field is empty Error Message "The Password field is required." show up', function () {
+        it('TC 3.4.6 Submitting an empty Password Field throws an error "The Password field is required." ', function () {
             login.whenPasswordEmpty();
         });
 
-        it('TC 3.4.7 Submitting incorrect UserName and Password data, error message "Your user name and password does not match anyone in our system. Please try again." shows up', function () {
+        it('TC 3.4.7 Submitting incorrect UserName and Password data, throws an error "Your user name and password does not match anyone in our system. Please try again."', function () {
             login.whenUserNameAndPasswordIncorrect();
         });
 
