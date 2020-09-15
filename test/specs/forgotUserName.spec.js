@@ -95,11 +95,11 @@ describe('Forgot User Name', function () {
             forgotUserNameForm.backToLoginBtnRedirects();
         });
 
-        it('TC 4.4.3 When Email Field is empty Error Message "The Email field is required." shows up ', function () {
+        it('TC 4.4.3 Submitting an empty Email Field throws an error "The Email field is required." ', function () {
             forgotUserNameForm.emptyEmailError();
         });
 
-        it('TC 4.4.5 When Email Field filled out correct, message "An e-mail with your username has been sent to the entered e-mail address if it corresponds to an active account." shows up', function () { //define test title by passing a string
+        it('TC 4.4.5 Submitting correct Email Field, message "An e-mail with your username has been sent to the entered e-mail address if it corresponds to an active account." shows up', function () { //define test title by passing a string
             forgotUserNameForm.correctEmailResult();
         });
 
