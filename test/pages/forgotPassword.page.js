@@ -77,7 +77,7 @@ class ForgotPasswordPage extends BasePage {
 
     userNameLabelText() {
         const labelTxt = $(selectorsForgotPassword.userNameLabel).getText();
-        assert.equal(labelTxt, expectedForgotPassword.userNameLabelText)
+        assert.equal(labelTxt, expectedForgotPassword.userNameLabelText);
     }
 
     cancelBtnText() {
