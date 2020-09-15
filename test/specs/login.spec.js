@@ -14,7 +14,7 @@ describe('Login Form ', function () {
         });
 
         it('TC 3.1.3 Header Title "Welcome to Connections" is Displayed ', function () {
-            login.titleWelcomeToConnectDisplayed()
+            login.titleWelcomeToConnectDisplayed();
         });
 
         it('TC 3.1.4 Definition Text is Displayed', function () {
